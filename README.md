@@ -45,6 +45,19 @@ regexObj.test(str)
 ^  表示匹配行首的文本（以谁开始）
 $  表示匹配行尾的文本（以谁结束）
 
-var rg = /abc/;  // /abc/只要包含abc这个字符串返回的都是true
+var rg = /abc/;  // 只要包含abc这个字符串返回的都是true
+rg.test('abc');  // true
+rg.test('abcd');  // true
+rg.test('aabcd');  // true
 
+var reg = /^abc/;  // 以abc开头
+reg.test('abc')  // true
+reg.test('abcd')  // true
+reg.test('aabcd')  // false
+
+var reg1 = /^abc$/;  // 以abc开头，并且以abc结尾，说白了就是只包含abc这个字符串===精准匹配
+reg.test('abc')  // true
+reg.test('abcd')  // false
+reg.test('aabcd')  // false
+reg.test('abcabc')  // false
 ```
