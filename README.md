@@ -64,7 +64,7 @@ reg.test('abcabc')  // false
 ```
 ### 3.3 字符类
 ```
-[]  表示有一系列字符可供选择，只要匹配其中一个就可以了
+1. []  表示有一系列字符可供选择，只要匹配其中一个就可以了。所有可供选择的字符都放在方括号内。
 
 // var rg = /abc/;  // 只要包含abc就可以
 
@@ -73,4 +73,13 @@ rg.test('andy');   // true
 rg.test('baby');   // true
 rg.test('color');   // true
 rg.test('red');   // false
+
+var rg1 = /^[abc]$/; // 三选一 只有是a 或者是b 或者是c 这三个字母才返回true
+rg1.test('aa');   // false
+rg1.test('a');   // true
+rg1.test('b');   // true
+rg1.test('c');   // true
+rg1.test('abc');   // false
+
+2. [-]  方括号内部范围符 - 
 ```
