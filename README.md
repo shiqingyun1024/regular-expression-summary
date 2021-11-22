@@ -44,6 +44,7 @@ regexObj.test(str)
 正则表达式中的边界符（位置符）用来提示字符所处的位置，主要有两个字符。
 ^  表示匹配行首的文本（以谁开始）
 $  表示匹配行尾的文本（以谁结束）
+如果^和$在一起，表示必须是精准匹配
 
 var rg = /abc/;  // 只要包含abc这个字符串返回的都是true
 rg.test('abc');  // true
@@ -60,4 +61,16 @@ reg.test('abc')  // true
 reg.test('abcd')  // false
 reg.test('aabcd')  // false
 reg.test('abcabc')  // false
+```
+### 3.3 字符类
+```
+[]  表示有一系列字符可供选择，只要匹配其中一个就可以了
+
+// var rg = /abc/;  // 只要包含abc就可以
+
+var rg = /[abc]/; // 只要包含有a 或者 包含有b 或者包含有c 都返回为true
+rg.test('andy');   // true
+rg.test('baby');   // true
+rg.test('color');   // true
+rg.test('red');   // false
 ```
