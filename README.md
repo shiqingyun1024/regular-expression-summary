@@ -160,3 +160,21 @@ reg7.test('aa');        // false
 reg7.test('aady-red');  // true
 reg7.test('aady007');   // true
 ```
+### 3.5 括号总结
+```
+1. 中括号  字符集合 匹配方括号中的任意字符
+var reg = /^[abc]$/;  // 多选一，a也可以，b也可以，c也可以 a || b || c
+
+2. 大括号  量词符   里面表示重复次数
+var reg1 = /^abc{3}$/;  // 它只是让c重复三次  abccc
+reg1.test('abc');  // false
+reg1.test('abcabcabc');  // false
+reg1.test('abccc');  // true
+
+3. 小括号  表示优先级
+var reg2 = /^(abc){3}$/;  // 它是让abc重复三次  abcabcabc
+reg2.test('abc');  // false
+reg2.test('abcabcabc');  // true
+reg2.test('abccc');  // false
+
+```
