@@ -145,11 +145,18 @@ reg5.test('a');     // false
 reg5.test('aaa');   // true
 reg5.test('aaaa');  // true
 
-6. {3,6} 大于等于3 并且 小于等于6
-var reg6 = /^a{3,6}$/;
+6. {3,6} 大于等于3 并且 小于等于6 中间不要有空格，{3, 6}这样不对
+var reg6 = /^a{3,6}$/;  
 reg6.test('');      // false
 reg6.test('a');     // false
 reg6.test('aaa');   // true
 reg6.test('aaaa');  // true
 reg6.test('aaaaaaa');  // false
+
+综合举例：
+用户名验证
+var reg7 = /^[a-zA-Z0-9_-]{6,16}$/;
+reg7.test('aa');        // false
+reg7.test('aady-red');  // true
+reg7.test('aady007');   // true
 ```
