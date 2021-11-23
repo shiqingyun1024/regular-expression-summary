@@ -109,5 +109,47 @@ var rg5 = /^[^a-zA-Z0-9_-]$/;  // 26个英文大小写字母和数字_,-任何�
 {n,}     重复n次或更多次
 {n,m}    重复n到m次
 
+举例：
+简单理解：就是让下面的a这个字符重复多少次
+var reg = /^a$/;
 
+1. * 相当于 >= 0 可以出现0次或者很多次
+var reg1 = /^a*$/;
+reg1.test('');      // true
+reg1.test('a');     // true
+reg1.test('aaaa');  // true
+
+2. + 相当于 >= 1 可以出现1次或者很多次
+var reg2 = /^a+$/;
+reg2.test('');      // false
+reg2.test('a');     // true
+reg2.test('aaaa');  // true
+
+3. ? 相当于 1 || 0
+var reg3 = /^a+$/;
+reg3.test('');      // true
+reg3.test('a');     // true
+reg3.test('aaaa');  // false
+
+4. {3}就是重复3次  {}更精确指定重复多少次
+var reg4 = /^a{3}$/;
+reg4.test('');      // false
+reg4.test('a');     // false
+reg4.test('aaa');  // true
+reg4.test('aaaa');  // false
+
+5. {3,} 大于等于3
+var reg5 = /^a{3,}$/;
+reg5.test('');      // false
+reg5.test('a');     // false
+reg5.test('aaa');   // true
+reg5.test('aaaa');  // true
+
+6. {3,6} 大于等于3 并且 小于等于6
+var reg6 = /^a{3,6}$/;
+reg6.test('');      // false
+reg6.test('a');     // false
+reg6.test('aaa');   // true
+reg6.test('aaaa');  // true
+reg6.test('aaaaaaa');  // false
 ```
