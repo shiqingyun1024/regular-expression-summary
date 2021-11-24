@@ -178,3 +178,6 @@ reg2.test('abcabcabc');  // true
 reg2.test('abccc');  // false
 
 ```
+### 3.6 预定义类
+```
+```
