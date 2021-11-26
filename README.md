@@ -202,4 +202,21 @@ var reg = /^\d{3,4}-\d{7,8}$/
 replace()方法可以实现替换字符串操作，用来替换的参数可以是一个字符串或是一个正则表达式。
 
 stringObject.replace(regexp/substr,replacement)
+
+替换字符串
+let str = 'andy和red';
+str.replace('andy','bady');
+换成正则表达式
+str.replace(/andy/,'bady');
+1. 第一个参数：被替换的字符串或者正则表达式
+2. 第二个参数：替换为的字符串
+3. 返回值是一个替换完毕的新字符串
+```
+### 4.2 正则表达式参数
+```
+/表达式/[switch]
+switch(也称为修饰符)按照什么样的模式来匹配，有三种值：
+g: 全局匹配
+i: 忽略大小写
+gi: 全局匹配 + 忽略大小写
 ```
